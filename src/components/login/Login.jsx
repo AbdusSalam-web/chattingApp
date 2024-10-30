@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebook, FaRegEyeSlash } from 'react-icons/fa';
+import { FaEye, FaFacebook, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
