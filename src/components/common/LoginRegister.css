@@ -1,0 +1,120 @@
+.account {
+    @apply w-full bg-brandClr pl-[30px] flex relative justify-between;
+
+    .account_text {
+
+        >h1 {
+            @apply font-poppins font-semibold text-[30px] text-[#FFFFFF] w-[456px] pt-[154px];
+        }
+
+        .account_image {
+            @apply absolute top-[30%];
+            animation: move linear 3s infinite;
+
+            img {
+                @apply w-[90%] h-auto;
+            }
+        }
+    }
+
+    .account_form {
+        @apply w-[748px] h-auto bg-[#FFFFFF] rounded-tl-[50px] rounded-bl-[50px];
+
+        .text {
+            @apply text-center;
+
+            >h2 {
+                @apply font-poppins font-bold text-[48px] text-[#000000] pt-[109px];
+            }
+        }
+
+        .other_account {
+            @apply flex gap-[55px] justify-center mt-[51px] mb-[44px];
+
+            button {
+                @apply w-[314px] h-[67px] px-[18px] border-[2px] border-[#A6A6A6] rounded-[20px] flex items-center gap-[17px] font-poppins font-medium text-[18px] text-[#9D9D9D];
+
+                svg {
+                    @apply text-[50px] text-[#1A4688];
+                }
+            }
+        }
+
+        .main_form {
+            @apply w-[526px] mx-auto mt-[58px] mb-[84px];
+        }
+
+        .submit {
+            @apply w-[526px] bg-brandClr rounded-[25px] py-[14px] mt-[64px] font-poppins font-bold text-[#FFFFFF] text-[30px];
+        }
+
+        .logIn {
+            @apply mt-[41px] pb-[119px] text-center font-poppins font-medium text-[26px] text-[#A6A6A6];
+
+            span {
+                @apply text-[#B0D8DA] cursor-pointer;
+            }
+        }
+    }
+}
+
+@keyframes move {
+    0% {
+        top: 30%;
+    }
+
+    50% {
+        top: 25%;
+    }
+
+    100% {
+        top: 30%;
+    }
+}
+
+/* From Uiverse.io by Satwinder04 */
+.input-container {
+    position: relative;
+    @apply my-[30px];
+    width: 526px;
+}
+
+.input-container input {
+    font-size: 26px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #B8B8B8;
+    background-color: transparent;
+    outline: none;
+    @apply font-poppins;
+    caret-color: #B8B8B8;
+}
+
+.input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #A6A6A6;
+    transition: all 0.3s ease;
+
+}
+
+.input-container input:focus ~ .label {
+    top: -10px;
+}
+
+.input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #B8B8B8;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus ~ .underline {
+    transform: scaleX(1);
+}
