@@ -42,7 +42,7 @@ const Login = () => {
                 <div>
                   <div className="input-container">
                     <input type="text" id="input" required="" />
-                    <label for="input" className="label">
+                    <label  className="label">
                       Email Address
                     </label>
                     <div className="underline"></div>
@@ -53,7 +53,7 @@ const Login = () => {
                       id="input"
                       required=""
                     />
-                    <label for="input" className="label">
+                    <label  className="label">
                       Password
                       {showPassword ? (
                         <FaEye

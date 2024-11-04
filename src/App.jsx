@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
-
+import app from "./firebas.config";
+import { ToastContainer, toast } from "react-toastify";
 function App() {
   const myRoute = createBrowserRouter(
     createRoutesFromElements(
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <RouterProvider router={myRoute} />
+      <ToastContainer />
     </>
   );
 }
