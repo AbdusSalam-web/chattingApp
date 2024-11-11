@@ -8,12 +8,14 @@ import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import app from "./firebas.config";
 import { ToastContainer, toast } from "react-toastify";
+import Home from "./pages/Home";
 function App() {
   const myRoute = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element = {<Login/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Route>
     )
   );

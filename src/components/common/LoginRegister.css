@@ -42,24 +42,32 @@
 
         .main_form {
             @apply w-[526px] mx-auto mt-[58px] mb-[84px];
-            svg{
-                @apply text-[#A6A6A6] font-[20px] pb-[5px]; 
+
+            svg {
+                @apply text-[#A6A6A6] font-[20px] pb-[5px];
             }
         }
 
-        .submit {
+        .submit,
+        .spinning , .spinner{
             @apply w-[526px] bg-brandClr rounded-[25px] py-[14px] mt-[64px] font-poppins font-bold text-[#FFFFFF] text-[30px];
         }
 
-        .logIn {
-            @apply mt-[41px] pb-[119px] text-center font-poppins font-medium text-[26px] text-[#A6A6A6];
+        .spinning , .spinner{
+            @apply relative bg-gray-500 pb-[15px];
 
-            span {
-                @apply text-[#B0D8DA] cursor-pointer;
-            }
+        }
+    }
+
+    .logIn {
+        @apply mt-[41px] pb-[119px] text-center font-poppins font-medium text-[26px] text-[#A6A6A6];
+
+        span {
+            @apply text-[#B0D8DA] cursor-pointer;
         }
     }
 }
+
 
 @keyframes move {
     0% {
@@ -104,7 +112,7 @@
 
 }
 
-.input-container input:focus  {
+.input-container input:focus {
     top: -10px;
 }
 
@@ -119,6 +127,6 @@
     transition: all 0.3s ease;
 }
 
-.input-container input:focus ~ .underline {
+.input-container input:focus~.underline {
     transform: scaleX(1);
 }
