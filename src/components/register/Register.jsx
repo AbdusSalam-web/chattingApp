@@ -57,7 +57,7 @@ const Register = () => {
             updateProfile(auth.currentUser, {
               displayName: name,
               photoURL:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+                "https://cdn-icons-png.flaticon.com/512/10337/10337609.png",
             })
               .then(() => {
                 navigate("/login");
@@ -207,7 +207,7 @@ const Register = () => {
                 </div>
                 <div className="input-container">
                   <input
-                    type="text"
+                    type="email"
                     required=""
                     placeholder="Email Address"
                     onChange={(e) => {

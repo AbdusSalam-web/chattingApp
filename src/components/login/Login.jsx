@@ -2,10 +2,13 @@ import React from "react";
 import { FaEye, FaFacebook, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast, Slide } from "react-toastify";
 import { ClipLoader } from "react-spinners";
+import { useDispatch } from "react-redux";
+import { userData } from "../../features/counter/userSlice";
+
 const Login = () => {
   // *********** useState for storing the default data
   const navigate = useNavigate();
@@ -22,7 +25,9 @@ const Login = () => {
   const [spinner, setSpinner] = useState(false);
   // ********** firbase variable
   const auth = getAuth();
+  // *******  Redux variable
 
+  const dispatch = useDispatch();
   // ********* function part start
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +40,7 @@ const Login = () => {
       setPasswordError("Enter your password.");
     } else {
       setSpinner(true);
-      signInWithEmailAndPassword(auth, email, password)
+      signInWithEmailAndPassword(auth, email, password) // login promise
         .then((userCredential) => {
           const user = userCredential.user;
           console.log("🚀 ~ .then ~ user:", user);
@@ -65,6 +70,11 @@ const Login = () => {
               transition: Slide,
             });
             navigate("/");
+            // ======== set data to Redux
+            dispatch(userData(user));
+            console.log( user);
+            // ****** set data to local storage
+            localStorage.setItem("user", JSON.stringify(user));
           }
         })
         .catch((error) => {
@@ -126,7 +136,7 @@ const Login = () => {
                 <div>
                   <div className="input-container">
                     <input
-                      type="text"
+                      type="email"
                       onChange={(e) => {
                         setEmail(e.target.value);
                         setEmailLabel("");
@@ -186,9 +196,12 @@ const Login = () => {
                   </button>
                 ) : (
                   <button className="submit" type="submit">
-                   Log In
+                    Log In
                   </button>
                 )}
+                <p className="forgotPassword">
+                  Forgot password? <Link to={"/resetpassword"}>Reset</Link>
+                </p>
               </form>
               <div className="logIn">
                 <p>

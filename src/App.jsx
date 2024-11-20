@@ -1,6 +1,7 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
@@ -9,11 +10,16 @@ import Login from "./components/login/Login";
 import app from "./firebas.config";
 import { ToastContainer, toast } from "react-toastify";
 import Home from "./pages/Home";
+import ResetPassword from "./components/resetPassword/ResetPassword";
+import LayoutMain from "./layout/LayoutMain";
 function App() {
   const myRoute = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LayoutMain />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Route>

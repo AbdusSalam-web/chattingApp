@@ -1,132 +1,136 @@
 .account {
-    @apply w-full bg-brandClr pl-[30px] flex relative justify-between;
+  @apply w-full bg-brandClr pl-[30px] flex relative justify-between;
 
-    .account_text {
-
-        >h1 {
-            @apply font-poppins font-semibold text-[30px] text-[#FFFFFF] w-[456px] pt-[154px];
-        }
-
-        .account_image {
-            @apply absolute top-[30%];
-            animation: move linear 3s infinite;
-
-            img {
-                @apply w-[90%] h-auto;
-            }
-        }
+  .account_text {
+    > h1 {
+      @apply font-poppins font-semibold text-[30px] text-[#FFFFFF] w-[456px] pt-[154px];
     }
 
-    .account_form {
-        @apply w-[748px] h-auto bg-[#FFFFFF] rounded-tl-[50px] rounded-bl-[50px];
+    .account_image {
+      @apply absolute top-[30%];
+      animation: move linear 3s infinite;
 
-        .text {
-            @apply text-center;
+      img {
+        @apply w-[90%] h-auto;
+      }
+    }
+  }
 
-            >h2 {
-                @apply font-poppins font-bold text-[48px] text-[#000000] pt-[109px];
-            }
-        }
+  .account_form {
+    @apply w-[748px] h-auto bg-[#FFFFFF] rounded-tl-[50px] rounded-bl-[50px];
 
-        .other_account {
-            @apply flex gap-[55px] justify-center mt-[51px] mb-[44px];
+    .text {
+      @apply text-center;
 
-            button {
-                @apply w-[314px] h-[67px] px-[18px] border-[2px] border-[#A6A6A6] rounded-[20px] flex items-center gap-[17px] font-poppins font-medium text-[18px] text-[#9D9D9D];
-
-                svg {
-                    @apply text-[50px] text-[#1A4688];
-                }
-            }
-        }
-
-        .main_form {
-            @apply w-[526px] mx-auto mt-[58px] mb-[84px];
-
-            svg {
-                @apply text-[#A6A6A6] font-[20px] pb-[5px];
-            }
-        }
-
-        .submit,
-        .spinning , .spinner{
-            @apply w-[526px] bg-brandClr rounded-[25px] py-[14px] mt-[64px] font-poppins font-bold text-[#FFFFFF] text-[30px];
-        }
-
-        .spinning , .spinner{
-            @apply relative bg-gray-500 pb-[15px];
-
-        }
+      > h2 {
+        @apply font-poppins font-bold text-[48px] text-[#000000] pt-[109px];
+      }
     }
 
-    .logIn {
-        @apply mt-[41px] pb-[119px] text-center font-poppins font-medium text-[26px] text-[#A6A6A6];
+    .other_account {
+      @apply flex gap-[55px] justify-center mt-[51px] mb-[44px];
 
-        span {
-            @apply text-[#B0D8DA] cursor-pointer;
+      button {
+        @apply w-[314px] h-[67px] px-[18px] border-[2px] border-[#A6A6A6] rounded-[20px] flex items-center gap-[17px] font-poppins font-medium text-[18px] text-[#9D9D9D];
+
+        svg {
+          @apply text-[50px] text-[#1A4688];
         }
+      }
     }
+
+    .main_form {
+      @apply w-[526px] mx-auto mt-[58px] mb-[84px];
+
+      svg {
+        @apply text-[#A6A6A6] font-[20px] pb-[5px];
+      }
+    }
+
+    .submit,
+    .spinning,
+    .spinner {
+      @apply w-[526px] bg-brandClr rounded-[25px] py-[14px] mt-[64px] font-poppins font-bold text-[#FFFFFF] text-[30px];
+    }
+
+    .spinning,
+    .spinner {
+      @apply relative bg-gray-500 pb-[15px];
+    }
+  }
+
+  .logIn {
+    @apply mt-[41px] pb-[119px] text-center font-poppins font-medium text-[26px] text-[#A6A6A6];
+
+    span {
+      @apply text-[#B0D8DA] cursor-pointer;
+    }
+  }
 }
 
-
 @keyframes move {
-    0% {
-        top: 30%;
-    }
+  0% {
+    top: 30%;
+  }
 
-    50% {
-        top: 25%;
-    }
+  50% {
+    top: 25%;
+  }
 
-    100% {
-        top: 30%;
-    }
+  100% {
+    top: 30%;
+  }
 }
 
 /* From Uiverse.io by Satwinder04 */
 .input-container {
-    position: relative;
-    @apply my-[6px];
-    width: 526px;
+  position: relative;
+  @apply my-[6px];
+  width: 526px;
 }
 
 .input-container input {
-    font-size: 26px;
-    width: 100%;
-    border: none;
-    @apply text-[#A6A6A6];
-    border-bottom: 1px solid #B8B8B8;
-    background-color: transparent;
-    outline: none;
-    @apply font-poppins;
-    caret-color: #B8B8B8;
+  font-size: 26px;
+  width: 100%;
+  border: none;
+  @apply text-[#A6A6A6];
+  border-bottom: 1px solid #b8b8b8;
+  background-color: transparent;
+  outline: none;
+  @apply font-poppins;
+  caret-color: #b8b8b8;
 }
 
 .input-container .label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: #A6A6A6;
-    transition: all 0.3s ease;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #a6a6a6;
+  transition: all 0.3s ease;
 }
 
 .input-container input:focus {
-    top: -10px;
+  top: -10px;
 }
 
 .input-container .underline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background-color: #B8B8B8;
-    transform: scaleX(0);
-    transition: all 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #b8b8b8;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
 }
 
-.input-container input:focus~.underline {
-    transform: scaleX(1);
+.input-container input:focus ~ .underline {
+  transform: scaleX(1);
+}
+.forgotPassword {
+  @apply mt-[30px] font-medium text-center text-[16px] text-[#a7a7a7];
+  a {
+    @apply text-[#ff0000d2];
+  }
 }

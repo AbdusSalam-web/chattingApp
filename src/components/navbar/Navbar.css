@@ -1,0 +1,12 @@
+.navbar{
+    @apply  absolute p-[20px] shadow-[rgba(0,_0,_0,_0.4)_0px_15px_30px] top-[50%] right-[30px] translate-y-[-50%] rounded-md;
+    .flexible{
+        @apply flex flex-col items-center gap-[20px] text-3xl  text-gray-500;
+        a{
+            @apply cursor-pointer;
+        }
+        .user{
+            @apply w-[50px] h-[50px] rounded-full overflow-hidden bg-gray-500 border-[3px] border-teal-500
+        }
+    }
+}
