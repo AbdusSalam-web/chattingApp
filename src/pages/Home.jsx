@@ -1,17 +1,12 @@
 import React from "react";
 import UserProfile from "../components/userProfile/UserProfile";
 
-
 const Home = () => {
-  
   return (
     <>
-      <h1
-        className="w-full h-screen flex  items-center justify-center
-      drop-shadow-[0_15px_15px_rgba(0,0,0,0.25)]"
-      >
+      <div className="flex h-screen items-center justify-center">
         <UserProfile />
-      </h1>
+      </div>
     </>
   );
 };

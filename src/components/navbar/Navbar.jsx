@@ -1,13 +1,14 @@
 import React from "react";
 import "./Navbar.css";
-import { FaUserAlt, FaUserFriends } from "react-icons/fa";
-import { LuUser2, LuUserPlus2 } from "react-icons/lu";
+import { FaUserAlt  } from "react-icons/fa";
+import { LuUserPlus2 } from "react-icons/lu";
 import { BsPeopleFill } from "react-icons/bs";
 import { FaUserLargeSlash } from "react-icons/fa6";
 import { RiMessage2Fill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { IoLogOut } from "react-icons/io5";
 import { useSelector } from "react-redux";
+
 const Navbar = () => {
   // ****** getting Redux data
   const userDataSlice = useSelector((state) => state.currentUser.value);
@@ -25,16 +26,18 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="flexible">
-          <Link to={"/"}>
+          
+          <Link to={"/alluser"}>   { /* all user*/ }
             <FaUserAlt />
           </Link>
-          <Link to={"/"}>
+          {/* Friend request  */}
+          <Link  to={"/friendReq"}>
             <LuUserPlus2 />
           </Link>
-          <Link to={"/"}>
+          <Link >
             <BsPeopleFill />
           </Link>
-          <Link to={"/"}>
+          <Link >
             <div className="user">
               <img
                 src={userDataSlice?.photoURL || "User Name"}
@@ -42,13 +45,13 @@ const Navbar = () => {
               />
             </div>
           </Link>
-          <Link to={"/"}>
+          <Link >
             <FaUserLargeSlash />
           </Link>
-          <Link to={"/"}>
+          <Link >
             <RiMessage2Fill />
           </Link>
-          <Link to={""} onClick={handleLogout}>
+          <Link  onClick={handleLogout}>
             <IoLogOut />
           </Link>
         </div>

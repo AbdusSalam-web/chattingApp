@@ -8,6 +8,7 @@ import { toast, Slide } from "react-toastify";
 import { ClipLoader } from "react-spinners";
 import { useDispatch } from "react-redux";
 import { userData } from "../../features/counter/userSlice";
+import { getDatabase, ref, set } from "firebase/database";
 
 const Login = () => {
   // *********** useState for storing the default data
@@ -25,6 +26,7 @@ const Login = () => {
   const [spinner, setSpinner] = useState(false);
   // ********** firbase variable
   const auth = getAuth();
+  const db = getDatabase();
   // *******  Redux variable
 
   const dispatch = useDispatch();
@@ -70,11 +72,16 @@ const Login = () => {
               transition: Slide,
             });
             navigate("/");
-            // ======== set data to Redux
-            dispatch(userData(user));
-            console.log( user);
             // ****** set data to local storage
             localStorage.setItem("user", JSON.stringify(user));
+            // ======== set data to Redux
+            dispatch(userData(user));
+
+            console.log(user);
+            set(ref(db, "users/" + userCredential.user.uid), {
+              userName: userCredential.user.displayName,
+              userPhotoURL: userCredential.user.photoURL,
+            });
           }
         })
         .catch((error) => {
